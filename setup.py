@@ -14,8 +14,7 @@ setup(
     url='https://github.com/alageek/django-voice',
     license='BSD',
     packages=find_packages(exclude=('demo', 'demo.*')),
-    package_data={'djangovoice': ['static/*',
-                                  'templates/*']},
+    include_package_data=True,
     zip_safe=False,
     classifiers=[
         "Programming Language :: Python",
