@@ -19,6 +19,7 @@ To satisfy dependencies listed in REQUIREMENTS you can simply run this command:
  * Activate django's comment system. (https://docs.djangoproject.com/en/dev/ref/contrib/comments/)
  * Add django-gravatar and django-voting to your INSTALLED_APPS in settings file.
  * Add comments and django-voice to your url configration.
+ * Create at least one Type and Status either through the admin or fixtures.
 
 After these steps, your INSTALLED_APPS in settings.py must be seen like this:
 
@@ -40,7 +41,9 @@ and urls.py like this:
       url(r'^comments/', include('django.contrib.comments.urls')),
       url(r'^feedback/', include('djangovoice.urls')))
 
-These are all that you need to do run django-voice.
+Remember to create and save at least one Type and Status model instance.
+
+That's all you need to run django-voice.
 
 AUTHORS
 =======
