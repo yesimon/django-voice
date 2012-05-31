@@ -23,7 +23,7 @@ To satisfy dependencies listed in REQUIREMENTS you can simply run this command:
 After these steps, your INSTALLED_APPS in settings.py must be seen like this:
 
 ::
-  
+
   INSTALLED_APPS = (
       ...
       'voting',

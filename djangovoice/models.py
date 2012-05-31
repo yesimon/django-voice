@@ -30,6 +30,9 @@ class Status(models.Model):
     def __unicode__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural = "statuses"
+
 
 class Type(models.Model):
     title = models.CharField(max_length=500)
@@ -76,3 +79,6 @@ class Feedback(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural = "feedback"
