@@ -30,6 +30,7 @@ textarea, input[type="text"] {
     margin: 0;
     padding: 5px;
     border: 1px solid #999;
+    resize: vertical;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
