@@ -16,8 +16,6 @@ from django.views.generic.detail import DetailView
 # decorators
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from djangovoice.decorators import apply_only_xhr
-from djangovoice.decorators import return_json
 
 
 class FeedbackDetailView(DetailView):
