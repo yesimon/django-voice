@@ -1,4 +1,20 @@
-VERSION = (0, 3, 1)
+__version_info__ = {
+    'major': 0,
+    'minor': 3,
+    'micro': 2,
+    'releaselevel': 'final',
+    }
 
 def get_version():
-    return '.'.join(map(str, VERSION))
+    """
+    Return the formatted version information
+    """
+    vers = ["%(major)i.%(minor)i" % __version_info__, ]
+
+    if __version_info__['micro']:
+        vers.append(".%(micro)i" % __version_info__)
+    if __version_info__['releaselevel'] != 'final':
+        vers.append('%(releaselevel)s' % __version_info__)
+    return ''.join(vers)
+
+__version__ = get_version()
