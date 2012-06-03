@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
-
-import os
-import djangovoice
 from setuptools import setup, find_packages
 
+djangovoice = __import__('djangovoice')
 
 setup(
     name='django-voice',
     version=djangovoice.get_version(),
     description="A feedback application for Django 1.3 or later",
-    author='Gökmen Görgen',
+    author=u'Gökmen Görgen',
     author_email='gokmen@alageek.com',
     url='https://github.com/gkmngrgn/django-voice',
     license='BSD',
