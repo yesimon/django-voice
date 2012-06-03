@@ -1,3 +1,5 @@
+{% load trans from i18n %}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
@@ -12,7 +14,7 @@
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
             {% else %}
-            <li class="info">{% trans "Share your thinking with us." %}</li>
+            <li class="info">{% trans "Share your thoughts with us." %}</li>
             {% endif %}
         </ul>
 
@@ -23,8 +25,8 @@
                 <ul>
                     <li><input id="id_title" type="text" name="title" placeholder="{% trans "Title (required)" %}" /></li>
                     <li>
-                        <textarea id="id_description" rows="10" cols="40" name="description"
-                                  placeholder="{% trans "Write description about your thinking." %}"></textarea>
+                        <textarea id="id_description" name="description"
+                                  placeholder="{% trans "Write your feedback here." %}"></textarea>
                     </li>
                     <li>
                         <ul>

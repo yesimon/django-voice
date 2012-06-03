@@ -1,9 +1,7 @@
 # Django settings for example project.
 import os
-import sys
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(os.path.split(ROOT)[0])
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

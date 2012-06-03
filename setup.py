@@ -1,28 +1,21 @@
 # -*- coding: utf-8 -*-
-
-import os
-import djangovoice
 from setuptools import setup, find_packages
 
-data_dirs = [
-    os.path.join('djangovoice', 'static'),
-    os.path.join('djangovoice', 'templates')
-]
-data_files = []
-for data_dir in data_dirs:
-    for dirpath, dirnames, filenames in os.walk(data_dir):
-        data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
+djangovoice = __import__('djangovoice')
+description = file('README.rst', 'r')
 
 setup(
     name='django-voice',
     version=djangovoice.get_version(),
     description="A feedback application for Django 1.3 or later",
-    author='Gökmen Görgen',
+    long_description=description.read(),
+    author=u'Gökmen Görgen',
     author_email='gokmen@alageek.com',
-    url='https://github.com/alageek/django-voice',
+    url='https://github.com/gkmngrgn/django-voice',
     license='BSD',
+    platforms='any',
     packages=find_packages(exclude=('demo', 'demo.*')),
-    data_files = data_files,
+    include_package_data=True,
     zip_safe=False,
     classifiers=[
         "Programming Language :: Python",
@@ -32,7 +25,7 @@ setup(
     ],
     install_requires=[
         "Django>=1.3",
-        "django-gravatar==0.1.0",
-        "django-voting==0.1"
+        "django-gravatar>=0.1.0",
+        "django-voting>=0.1"
     ]
 )

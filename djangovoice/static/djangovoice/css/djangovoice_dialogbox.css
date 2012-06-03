@@ -26,6 +26,10 @@ ul ul li {
     display: inline;
 }
 
+input[type="text"] {
+    resize: none;
+}
+
 textarea, input[type="text"] {
     margin: 0;
     padding: 5px;
@@ -38,6 +42,8 @@ textarea, input[type="text"] {
 textarea {
     margin-bottom: 10px;
     width: 100%;
+    resize: horizontal;
+    height: 150px;
 }
 
 input[type="submit"] {
