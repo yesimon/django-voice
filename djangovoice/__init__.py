@@ -1,9 +1,10 @@
 __version_info__ = {
     'major': 0,
     'minor': 3,
-    'micro': 2,
-    'releaselevel': 'final',
-    }
+    'micro': 3,
+    'releaselevel': 'final'
+}
+
 
 def get_version():
     """
