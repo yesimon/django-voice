@@ -1,25 +1,25 @@
 {% load trans from i18n %}
 
 <tr class="{{ field.html_name }}">
-    <td class="label">
-        {{ field.label_tag }}
+  <td class="input-label">
+    {{ field.label_tag }}
 
-        {% if field.field.required %}
-        	<span class="required">({% trans "required" %})</span>
-        {% endif %}
+    {% if field.field.required %}
+      <span class="required">({% trans "required" %})</span>
+    {% endif %}
 
-        {% if field.help_text %}
-	        <div class="form-help">
-	            {{ field.help_text }}
-	        </div>
-        {% endif %}
-    </td>
+    {% if field.help_text %}
+	  <div class="form-help">
+	    {{ field.help_text }}
+	  </div>
+    {% endif %}
+  </td>
 
-    <td class="field{% if field.errors %} field-error{% endif %}">
-        {{ field }}
+  <td class="field{% if field.errors %} field-error{% endif %}">
+    {{ field }}
 
-        {% if field.errors %}
-        <div class="form-errors">{{ field.errors }}</div>
-        {% endif %}
-    </td>
+    {% if field.errors %}
+      <div class="form-errors">{{ field.errors }}</div>
+    {% endif %}
+  </td>
 </tr>
