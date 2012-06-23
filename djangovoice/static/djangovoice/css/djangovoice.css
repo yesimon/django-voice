@@ -393,12 +393,12 @@ input[type="submit"] {
     color: #ffffff;
 }
 
-form td.label {
+form td.input-label {
     width: 200px;
     vertical-align: top;
 }
 
-form td.label label {
+form td.input-label label {
     padding: 0;
     text-align: left;
 }
@@ -407,7 +407,7 @@ form td {
     padding-bottom: 5px;
 }
 
-form td.label .form-help, .help-text {
+form td.input-label .form-help, .help-text {
     font-size: 11px;
     color: #999999;
     line-height: 12px;
@@ -418,7 +418,7 @@ form td.field-error input, form td.field-error textarea {
     border-color: #ff8b8b;
 }
 
-form td.label .required {
+form td.input-label .required {
     font-size: 10px;
     color: #999999;
     padding-left: 5px;
