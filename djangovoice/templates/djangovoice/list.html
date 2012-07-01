@@ -53,7 +53,7 @@
 			                    {% endif %}
 			                </span>
 
-			                <span class="feedback-date">{% trans "on" %} {{ feedback.created|date:"d M Y" }}</span>
+			                <span class="feedback-date">{% blocktrans with feedback.created|date:"d M Y" as create_date %}on {{ create_date }}{% endblocktrans %}</span>
 			            </p>
 			        </td>
 

@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext, ugettext_lazy as _, pgettext
 
 STATUS_CHOICES = (
-    ('open', 'Open'),
-    ('closed', 'Closed'),
+    ('open', pgettext('status', 'Open')),
+    ('closed', pgettext('status', 'Closed')),
 )
 
 
@@ -13,7 +14,7 @@ class Status(models.Model):
     slug = models.SlugField(max_length=500)
     default = models.BooleanField(
         blank=True,
-        help_text='New feedback will have this status')
+        help_text=_('New feedback will have this status'))
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="open")
 
@@ -31,7 +32,7 @@ class Status(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = "statuses"
+        verbose_name_plural = _("statuses")
 
 
 class Type(models.Model):
@@ -43,24 +44,30 @@ class Type(models.Model):
 
 
 class Feedback(models.Model):
-    type = models.ForeignKey(Type)
-    title = models.CharField(max_length=500)
+    type = models.ForeignKey(Type, verbose_name=_('Type'))
+    title = models.CharField(max_length=500, verbose_name=_('Title'))
     description = models.TextField(
         blank=True,
-        help_text='This wiill be viewable by other people - '\
+        help_text=_('This wiill be viewable by other people - '\
                   'do not include any private details such as '\
                   'passwords or phone numbers here.')
+        , verbose_name=_('Description')
+        )
     anonymous = models.BooleanField(
         blank=True,
-        help_text='Do not show who sent this')
+        help_text=_('Do not show who sent this')
+        , verbose_name=_('Anonymous')
+        )
     private = models.BooleanField(
         blank=True,
-        help_text='Hide from public pages. Only site administrators '\
+        help_text=_('Hide from public pages. Only site administrators '\
                   'will be able to view and respond to this.')
-    user = models.ForeignKey(User, blank=True, null=True)
+        , verbose_name=_('Private')
+        )
+    user = models.ForeignKey(User, blank=True, null=True, verbose_name=_('User'))
     created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    status = models.ForeignKey(Status)
-    duplicate = models.ForeignKey('self', null=True, blank=True)
+    status = models.ForeignKey(Status, verbose_name=_('Status'))
+    duplicate = models.ForeignKey('self', null=True, blank=True, verbose_name=_('Duplicate'))
 
     def save(self, *args, **kwargs):
         try:
@@ -81,4 +88,4 @@ class Feedback(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = "feedback"
+        verbose_name_plural = _("feedback")
