@@ -70,7 +70,10 @@ class Feedback(models.Model):
         'self', null=True, blank=True, verbose_name=_("Duplicate"))
 
     def save(self, **kwargs):
-        if not self.status:
+        try:
+            self.status
+
+        except Status.DoesNotExist:
             try:
                 default = Status.objects.get(default=True)
 
