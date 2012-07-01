@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-01 12:16+0300\n"
+"POT-Creation-Date: 2012-07-01 13:29-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,13 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: models.py:7
-#, fuzzy
 msgctxt "status"
 msgid "Open"
 msgstr "Avoin"
 
 #: models.py:8
-#, fuzzy
 msgctxt "status"
 msgid "Closed"
 msgstr "Suljettu"
@@ -34,65 +32,67 @@ msgstr "Suljettu"
 msgid "New feedback will have this status"
 msgstr "Uudella palautteella on tämä tila"
 
-#: models.py:35
-#, fuzzy
+#: models.py:37
+msgid "status"
+msgstr "Tilat"
+
+#: models.py:38
 msgid "statuses"
 msgstr "Tilat"
 
-#: models.py:47 templates/djangovoice/sidebar.html:13
+#: models.py:50 templates/djangovoice/sidebar.html:13
 msgid "Type"
 msgstr "Tyyppi"
 
-#: models.py:48
+#: models.py:51
 msgid "Title"
 msgstr ""
 
-#: models.py:51
+#: models.py:53
+msgid "Description"
+msgstr "Kuvaus"
+
+#: models.py:55
 msgid ""
-"This wiill be viewable by other people - do not include any private details "
+"This will be viewable by other people - do not include any private details "
 "such as passwords or phone numbers here."
 msgstr ""
 "Tämä näkyy kaikille käyttäjille. Älä kirjoita mitään henkilökohtaista "
 "tietoa  (puhelinnumero, salasana) tähän kenttään."
 
-#: models.py:54
-msgid "Description"
-msgstr "Kuvaus"
-
 #: models.py:58
+msgid "Anonymous"
+msgstr "Nimetön"
+
+#: models.py:59
 msgid "Do not show who sent this"
 msgstr "Älä näytä kuka tämän lähetti"
 
-#: models.py:59
-msgid "Anonymous"
-msgstr "Nimetön"
+#: models.py:61
+msgid "Private"
+msgstr "Yksityinen"
 
 #: models.py:63
 msgid ""
 "Hide from public pages. Only site administrators will be able to view and "
-"respond to this."
+"respond to this"
 msgstr ""
 "Älä näytä julkisesti. Vain sivuston ylläpitäjät voivat nähdä ja vastata "
 "tähän."
 
-#: models.py:65
-msgid "Private"
-msgstr "Yksityinen"
-
-#: models.py:67
+#: models.py:66
 msgid "User"
 msgstr "Käyttäjä"
 
-#: models.py:69 templates/djangovoice/sidebar.html:3
+#: models.py:68 templates/djangovoice/sidebar.html:3
 msgid "Status"
 msgstr "Tila"
 
 #: models.py:70
-#, fuzzy
 msgid "Duplicate"
 msgstr "Duplikaatti"
 
-#: models.py:91 templates/djangovoice/tags/widget.html:17
+#: models.py:92 models.py:93 templates/djangovoice/tags/widget.html:17
 msgid "feedback"
 msgstr "palautteet"
 
@@ -179,11 +179,11 @@ msgid "Submitted by:"
 msgstr "Tekijä:"
 
 #: templates/djangovoice/detail.html:54 templates/djangovoice/detail.html:55
-#: templates/djangovoice/list.html:46
+#: templates/djangovoice/list.html:45
 msgid "View profile"
 msgstr "Näytä profiili"
 
-#: templates/djangovoice/detail.html:57 templates/djangovoice/list.html:52
+#: templates/djangovoice/detail.html:57 templates/djangovoice/list.html:51
 msgid "Submitted anonymously"
 msgstr "Anonyymi tekijä"
 
@@ -289,35 +289,35 @@ msgstr "kommentit%(comment_count|pluralize)s"
 msgid "on %(create_date)s"
 msgstr "%(create_date)s"
 
-#: templates/djangovoice/list.html:61
+#: templates/djangovoice/list.html:62
 msgid "PRIVATE"
 msgstr "YKSITYINEN"
 
-#: templates/djangovoice/list.html:70
+#: templates/djangovoice/list.html:71
 msgid "first"
 msgstr "ensimmäinen"
 
-#: templates/djangovoice/list.html:71
+#: templates/djangovoice/list.html:72
 msgid "previous"
 msgstr "edellinen"
 
-#: templates/djangovoice/list.html:75
+#: templates/djangovoice/list.html:76
 msgid "Page"
 msgstr "Sivu"
 
-#: templates/djangovoice/list.html:75
+#: templates/djangovoice/list.html:76
 msgid "of"
 msgstr "/"
 
-#: templates/djangovoice/list.html:79
+#: templates/djangovoice/list.html:80
 msgid "next"
 msgstr "seuraava"
 
-#: templates/djangovoice/list.html:80
+#: templates/djangovoice/list.html:81
 msgid "last"
 msgstr "viimeinen"
 
-#: templates/djangovoice/list.html:85
+#: templates/djangovoice/list.html:86
 msgid ""
 "No one has contributed any feedback yet. Be the first and submit some "
 "feedback!"
