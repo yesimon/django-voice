@@ -1,8 +1,44 @@
-*.pyc
+## Project Specific Ignores
 demo/demo.db
-.project
-.pydevproject
-.settings
-build
+
+## Copied from https://github.com/github/gitignore/
+## Django.gitignore
+*.log
+*.pot
+*.pyc
+local_settings.py
+
+## Python.gitignore
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
 dist
-django_voice*
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
