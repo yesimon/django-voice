@@ -15,11 +15,16 @@ DATABASES = {
 
 TIME_ZONE = 'America/Chicago'
 
-LANGUAGE_CODE = 'en-us'
+ugettext = lambda s: s
+LANGUAGES = (
+    ('en', ugettext("English")),
+    ('fi', ugettext("Finnish")),
+    ('tr', ugettext("Turkish")))
+LANGUAGE_CODE = LANGUAGES[0][0]
 
 SITE_ID = 1
 
-USE_I18N = False # we don't need internalization at the moment
+USE_I18N = True
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
@@ -50,11 +55,12 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware'
 )
 
 ROOT_URLCONF = 'demo.urls'

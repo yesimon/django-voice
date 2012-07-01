@@ -14,5 +14,6 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^feedback/', include('djangovoice.urls')),
-    url(r'^auth/', include('django.contrib.auth.urls'))
+    url(r'^auth/', include('django.contrib.auth.urls')),
+    (r'^i18n/', include('django.conf.urls.i18n')),
 )
