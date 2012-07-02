@@ -29,7 +29,7 @@ class FeedbackDetailView(DetailView):
 
         if feedback.private:
             # Anonymous private feedback can be only accessed with slug
-            if 'slug' not in kwargs and feedback.user == None:
+            if not request.user.is_staff and 'slug' not in kwargs and feedback.user == None:
                 return Http404
             if not request.user.is_staff and request.user != feedback.user and feedback.user != None:
                 return Http404
