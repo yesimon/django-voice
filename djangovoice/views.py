@@ -63,7 +63,8 @@ class FeedbackListView(TemplateView):
         if feedback_status != 'all':
             feedback = feedback.filter(status__slug=feedback_status)
 
-        if not self.request.user.is_staff:
+        # If user is checking his own feedback, do not filter by private
+        if not self.request.user.is_staff and feedback_list != 'mine':
             feedback = feedback.filter(private=False)
 
         feedback_page = paginate(feedback, 10, self.request)
