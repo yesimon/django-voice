@@ -76,7 +76,9 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'voting',
     'gravatar',
+    'south',
     'base',
+
     # the important point is...
     'djangovoice'
 )
@@ -105,3 +107,5 @@ LOGGING = {
 }
 
 LOGIN_URL = "/admin/login"
+
+VOICE_ALLOW_ANONYMOUS_USER_SUBMIT = True

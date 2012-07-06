@@ -6,7 +6,7 @@ from djangovoice.models import Feedback
 class WidgetForm(ModelForm):
     class Meta:
         model = Feedback
-        fields = ('type', 'anonymous', 'private', 'title', 'description',)
+        fields = ('email', 'type', 'anonymous', 'private', 'title', 'description',)
 
 
 class EditForm(ModelForm):
