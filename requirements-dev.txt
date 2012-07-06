@@ -1,0 +1,4 @@
+-r requirements.txt
+
+South>=0.7.5
+docutils>=0.9.1
