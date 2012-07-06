@@ -45,6 +45,15 @@ Remember to create and save at least one Type and Status model instance.
 
 That's all you need to run django-voice.
 
+Settings
+========
+
+::
+
+  VOICE_ALLOW_ANONYMOUS_USER_SUBMIT (default: False)
+    Allow unsigned user to submit feedback. Asks user e-mail and marks
+    the feedback as private to prevent public spam.
+
 AUTHORS
 =======
 DjangoVoice was originally created by Huw Wilkins (http://huwshimi.com/)

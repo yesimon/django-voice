@@ -64,6 +64,12 @@ class Feedback(models.Model):
             "view and respond to this"))
     user = models.ForeignKey(
         User, blank=True, null=True, verbose_name=_("User"))
+    email = models.EmailField(blank=True, null=True, verbose_name=_('E-mail'),
+        help_text=_('You must provide your e-mail so we can answer to you. '\
+                    'Alternatively you can bookmark next page and check'\
+                    'out for an answer later.')
+        )
+    slug = models.SlugField(max_length=10, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     status = models.ForeignKey(Status, verbose_name=_('Status'))
     duplicate = models.ForeignKey(

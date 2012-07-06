@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-01 13:29-0500\n"
+"POT-Creation-Date: 2012-07-02 07:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,42 +84,54 @@ msgstr ""
 msgid "User"
 msgstr "Käyttäjä"
 
-#: models.py:68 templates/djangovoice/sidebar.html:3
+#: models.py:67
+msgid "E-mail"
+msgstr ""
+
+#: models.py:68
+msgid ""
+"You must provide your e-mail so we can answer to you. Alternatively you can "
+"bookmark next page and checkout for an answer later."
+msgstr ""
+"Kirjoita sähköpostiosoitteesi, jotta voimme vastata sinulle. Vaihtoehtoisesti "
+"voit tallentaa seuraavan sivun osoitteen, jolla pääset lukemaan vastauksen."
+
+#: models.py:74 templates/djangovoice/sidebar.html:3
 msgid "Status"
 msgstr "Tila"
 
-#: models.py:70
+#: models.py:76
 msgid "Duplicate"
 msgstr "Duplikaatti"
 
-#: models.py:92 models.py:93 templates/djangovoice/tags/widget.html:17
+#: models.py:101 models.py:102 templates/djangovoice/tags/widget.html:17
 msgid "feedback"
 msgstr "palautteet"
 
-#: views.py:49
+#: views.py:53
 msgid "Open Feedback"
 msgstr "Avoimet palautteet"
 
-#: views.py:52
+#: views.py:56
 msgid "Closed Feedback"
 msgstr "Suljetut palautteet"
 
-#: views.py:55
+#: views.py:59
 msgid "My Feedback"
 msgstr "Minun palautteeni"
 
-#: views.py:58 templates/djangovoice/detail.html:4
+#: views.py:62 templates/djangovoice/detail.html:4
 #: templates/djangovoice/feedback_base.html:16
 #: templates/djangovoice/submit.html:4 templates/djangovoice/submit.html:9
 #: templates/djangovoice/widget.html:9
 msgid "Feedback"
 msgstr "Palaute"
 
-#: views.py:111
+#: views.py:116
 msgid "Thanks for feedback."
 msgstr "Kiitos palautteestasi."
 
-#: views.py:117
+#: views.py:122
 msgid "Form is invalid."
 msgstr "Lomake on puutteellinen"
 
