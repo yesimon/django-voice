@@ -107,3 +107,5 @@ LOGGING = {
 }
 
 LOGIN_URL = "/admin/login"
+
+VOICE_ALLOW_ANONYMOUS_USER_SUBMIT = True
