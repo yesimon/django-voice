@@ -2,7 +2,7 @@
 django-voice
 ============
 
-django-voice is a very simple application to enable user feedback that is integrated with your Django project. Originally built for Verb (http://verbapp.com).
+django-voice integrates user feedback with your Django project. Originally built for Verb (http://verbapp.com).
 
 IMPORTANT: Upgrading to 0.4 from older versions
 ===============================================
@@ -14,15 +14,9 @@ If you upgrade django-voice to 0.4 from older versions, you will take an error a
 
 You have two ways for fixing the problem.
 
-If you use South..
-------------------
-Run this command::
-
-    python manage.py migrate djangovoice
-
-If you think to use South..
+If you want to use South..
 ---------------------------
-Pass first migration and implement second migration::
+Fake the first migration and run the second migration::
 
     python manage.py migrate --fake djangovoice 0001
     python manage.py migrate djangovoice
@@ -45,7 +39,7 @@ To satisfy dependencies listed in REQUIREMENTS you can simply run this command:
 
 ::
 
-  pip -r REQUIREMENTS
+  pip install -r requirements.txt
 
 
 'pip' will automatically download and install dependencies required for django-voice. Next step is activating helper applications to run.
@@ -85,8 +79,12 @@ Settings
 ::
 
   VOICE_ALLOW_ANONYMOUS_USER_SUBMIT (default: False)
-    Allow unsigned user to submit feedback. Asks user e-mail and marks
-    the feedback as private to prevent public spam.
+    Allow anonymous user to submit feedback. Asks for email and marks
+    the feedback as private to hide the email and prevent spam.
+
+  VOICE_BRAND_VIEW (default: 'djangovoice_home')
+    The view associated with clicking the brand logo in the top left
+    of the bootstrap navbar.
 
 AUTHORS
 =======

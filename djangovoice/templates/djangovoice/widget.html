@@ -1,4 +1,5 @@
 {% load trans from i18n %}
+{% load url from future %}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -20,7 +21,7 @@
 
         <div id="content">
             {% if user.is_authenticated %}
-            <form action="{% url djangovoice_widget %}" method="post">
+            <form action="{% url 'djangovoice_widget' %}" method="post">
                 {% csrf_token %}
                 <ul>
                     <li><input id="id_title" type="text" name="title" placeholder="{% trans "Title (required)" %}" /></li>

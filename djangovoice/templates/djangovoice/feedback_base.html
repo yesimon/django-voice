@@ -1,11 +1,12 @@
 {% extends "djangovoice/container.html" %}
 {% load user_name from djangovoice_tags %}
 {% load trans from i18n %}
+{% load url from future %}
 
 {% block sectionid %}feedback{% endblock %}
 
 {% block script_base %}
-  <link rel="alternate" type="application/rss+xml" title="{% trans "Latest feedback" %}" href="{% url feeds_latest %}" />
+  <link rel="alternate" type="application/rss+xml" title="{% trans "Latest feedback" %}" href="{% url 'feeds_latest' %}" />
 {% endblock %}
 
 {% block body %}
@@ -13,15 +14,15 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{% url djangovoice_home %}">{{ site.name }} {% trans "Feedback" %}</a>
+          <a class="brand" href="{% url brand_view %}">{{ site.name }} {% trans "Feedback" %}</a>
           <ul class="nav">
             {% block navigation %}
-              <li><a href="{% url djangovoice_list 'all' %}">{% trans "All" %}</a></li>
-              <li><a href="{% url djangovoice_list 'open' %}">{% trans "Open" %}</a></li>
-              <li><a href="{% url djangovoice_list 'closed' %}">{% trans "Closed" %}</a></li>
-              <li><a href="{% url djangovoice_list 'mine' %}">{% trans "Mine" %}</a></li>
+              <li><a href="{% url 'djangovoice_list' list='all' %}">{% trans "All" %}</a></li>
+              <li><a href="{% url 'djangovoice_list' list='open' %}">{% trans "Open" %}</a></li>
+              <li><a href="{% url 'djangovoice_list' list='closed' %}">{% trans "Closed" %}</a></li>
+              <li><a href="{% url 'djangovoice_list' list='mine' %}">{% trans "Mine" %}</a></li>
               <li class="feed-link">
-                <a href="{% url feeds_latest %}" title="{% trans "Subscribe to the feedback RSS feed" %}">
+                <a href="{% url 'feeds_latest' %}" title="{% trans "Subscribe to the feedback RSS feed" %}">
                   <img src="{{ STATIC_URL }}djangovoice/images/rss.png" alt="RSS" />
                 </a>
               </li>
@@ -40,7 +41,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                    <a href="{% url django.contrib.auth.views.logout %}?next={% url djangovoice_home %}">
+                    <a href="{% url 'django.contrib.auth.views.logout' %}?next={% url 'djangovoice_home' %}">
                       {% trans "Sign out" %}
                     </a>
                   </li>
@@ -48,7 +49,7 @@
               </li>
             {% else %}
               <li>
-                <a href="{% url django.contrib.auth.views.login %}?next={% url djangovoice_home %}">{% trans "Sign in" %}</a>
+                <a href="{% url 'django.contrib.auth.views.login' %}?next={% url 'djangovoice_home' %}">{% trans "Sign in" %}</a>
               </li>
             {% endif %}
           </ul>
@@ -61,7 +62,7 @@
     <div id="wrapper">
       <div class="container" id="actions">
         <ul>
-          <li><a href="{% url djangovoice_submit %}">{% trans "Submit feedback" %}</a></li>
+          <li><a href="{% url 'djangovoice_submit' %}">{% trans "Submit feedback" %}</a></li>
           {% block actions %}{% endblock %}
         </ul>
       </div>

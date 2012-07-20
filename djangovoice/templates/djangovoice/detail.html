@@ -1,12 +1,13 @@
 {% extends "djangovoice/feedback_base.html" %}
+{% load url from future %}
 {% load gravatar voting_tags djangovoice_tags comments i18n %}
 
 {% block title %}{% trans "Feedback" %}{% endblock %}
 
 {% block actions %}
 {% if user.is_staff or user == feedback.user %}
-<li><a href="{% url djangovoice_edit feedback.id %}">{% trans "Edit" %} &rarr;</a></li>
-<li><a href="{% url djangovoice_delete feedback.id %}">{% trans "Delete" %} &rarr;</a></li>
+<li><a href="{% url 'djangovoice_edit' feedback.id %}">{% trans "Edit" %} &rarr;</a></li>
+<li><a href="{% url 'djangovoice_delete' feedback.id %}">{% trans "Delete" %} &rarr;</a></li>
 {% endif %}
 {% endblock %}
 

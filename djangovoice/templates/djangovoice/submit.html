@@ -1,5 +1,6 @@
 {% extends "djangovoice/feedback_base.html" %}
 {% load trans from i18n %}
+{% load url from future %}
 
 {% block title %}{% trans "Feedback" %}{% endblock %}
 
@@ -8,7 +9,7 @@
 {% block content %}
   <h1>{% trans "Feedback" %}</h1>
 
-  <form action="{% url djangovoice_submit %}" method="post">
+  <form action="{% url 'djangovoice_submit' %}" method="post">
     {% csrf_token %}
 
     <table>
